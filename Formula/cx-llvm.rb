@@ -56,7 +56,7 @@ class CxLlvm < Formula
     cd "llvm" do
       mkdir "build" do
         system "cmake", "-G", "Unix Makefiles", "..", *(std_cmake_args + args)
-        system "make"
+        system "make", "-j", "4"
         system "make", "install"
       end
     end
