@@ -19,7 +19,7 @@ class CxLlvm < Formula
   # https://llvm.org/docs/GettingStarted.html#requirement
   depends_on "cmake" => :build
   depends_on xcode: :build
-  depends_on arch: :x86_64
+#   depends_on arch: :x86_64
   depends_on :macos
 
   uses_from_macos "libedit"
@@ -43,7 +43,7 @@ class CxLlvm < Formula
     ENV.permit_arch_flags
 
     args = %W[
-      -DLIBOMP_ARCH=x86_64
+      -DLIBOMP_ARCH=arm64
       -DFFI_INCLUDE_DIR=#{MacOS.sdk_path}/usr/include/ffi
       -DFFI_LIBRARY_DIR=#{MacOS.sdk_path}/usr/lib
     ]
